@@ -20,7 +20,7 @@ const AllUsers = () => {
 
   useEffect(() => {
     getAllUsers();
-  });
+  }, []);
   return (
     <WidgetWrapper mt="1rem">
       <Typography variant="h4" fontWeight="600" m="1rem 0">
