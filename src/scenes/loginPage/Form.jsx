@@ -89,13 +89,13 @@ const Form = () => {
       }
       formData.append("picturePath", picture.name);
       formData.append("picture", picture);
-      const savedUser = axios.post(
+      const savedUser = await axios.post(
         "https://socialmedia-numu.onrender.com/auth/register",
         formData
       );
       onSubmitProps.resetForm();
+      setLoading(false);
       if (savedUser.status === 201) {
-        setLoading(false);
         setPageType("login");
       }
     } catch (err) {
