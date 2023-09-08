@@ -9,6 +9,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import axios from "axios";
+import Error from "components/Error/Error";
 import FlexBetween from "components/FlexBetweenComponents";
 import Loader from "components/Loader/Loader";
 import { ErrorMessage, Formik } from "formik";
@@ -58,6 +59,7 @@ const Form = () => {
   const navigate = useNavigate();
   const [picture, setPicture] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const handleLogin = async (values, onSubmitProps) => {
     setLoading(true);
     try {
@@ -78,6 +80,7 @@ const Form = () => {
       }
     } catch (err) {
       setLoading(false);
+      setError(true);
     }
   };
   const handleRegister = async (values, onSubmitProps) => {
@@ -101,6 +104,7 @@ const Form = () => {
     } catch (err) {
       console.error(err);
       setLoading(false);
+      setError(true);
     }
   };
   const handleFormSubmit = async (values, onSubmitProps) => {
@@ -146,6 +150,7 @@ const Form = () => {
               >
                 {isRegister ? (
                   <>
+                    {error && <Error message="Try using a different email" />}
                     <TextField
                       label="First Name"
                       onBlur={handleBlur}
@@ -155,11 +160,7 @@ const Form = () => {
                       sx={{
                         gridColumn: "span 2",
                       }}
-                    />
-                    <ErrorMessage
-                      name="firstName"
-                      component="div"
-                      className="error"
+                      required
                     />
 
                     <TextField
@@ -171,6 +172,7 @@ const Form = () => {
                       sx={{
                         gridColumn: "span 2",
                       }}
+                      required
                     />
                     <TextField
                       label="Email"
@@ -181,6 +183,7 @@ const Form = () => {
                       sx={{
                         gridColumn: "span 4",
                       }}
+                      required
                     />
 
                     <TextField
@@ -193,6 +196,7 @@ const Form = () => {
                       sx={{
                         gridColumn: "span 4",
                       }}
+                      required
                     />
                     <Box
                       gridColumn="span 4"
@@ -221,6 +225,7 @@ const Form = () => {
                       sx={{
                         gridColumn: "span 4",
                       }}
+                      required
                     />
                     <TextField
                       type="text"
@@ -232,10 +237,12 @@ const Form = () => {
                       sx={{
                         gridColumn: "span 4",
                       }}
+                      required
                     />
                   </>
                 ) : (
                   <>
+                    {error && <Error message="Invalid Login Credentials" />}
                     <TextField
                       type="text"
                       label="Email"
@@ -246,6 +253,7 @@ const Form = () => {
                       sx={{
                         gridColumn: "span 2",
                       }}
+                      required
                     />
                     <TextField
                       type="password"
@@ -257,6 +265,7 @@ const Form = () => {
                       sx={{
                         gridColumn: "span 2",
                       }}
+                      required
                     />
                   </>
                 )}
@@ -270,8 +279,8 @@ const Form = () => {
                   sx={{
                     m: "2rem 0",
                     p: "1rem",
-
-                    backgroundColor: palette.primary.light,
+                    color: "#fff",
+                    backgroundColor: "#004AAD",
                   }}
                 >
                   {isLogin ? "LOGIN" : "REGISTER"}

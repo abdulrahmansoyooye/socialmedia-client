@@ -29,13 +29,15 @@ const Post = ({
       <Typography color={main} sx={{ mt: "1rem" }}>
         {description}
       </Typography>
-      <img
-        width="100%"
-        height="auto"
-        alt="post"
-        style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-        src={`https://socialmedia-numu.onrender.com/assets/${picturePath}`}
-      />{" "}
+      {picturePath && (
+        <img
+          width="100%"
+          height="auto"
+          alt="post"
+          style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
+          src={`https://socialmedia-numu.onrender.com/assets/${picturePath}`}
+        />
+      )}{" "}
     </WidgetWrapper>
   );
 };

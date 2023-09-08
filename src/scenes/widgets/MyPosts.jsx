@@ -73,7 +73,7 @@ const MyPosts = ({ picturePath }) => {
         mb="2rem"
       >
         <FlexBetween gap="1rem">
-          <UserImage image={picturePath}></UserImage>
+          {picturePath && <UserImage image={picturePath} />}
 
           <InputBase
             placeholder="What's on your mind?"

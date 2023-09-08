@@ -55,7 +55,6 @@ const Navbar = () => {
         >
           Bryte Developers
         </Typography>
-        <Typography>Made with 💞</Typography>
         {isNonMobileScreens && (
           <FlexBetween
             background={neutralLight}

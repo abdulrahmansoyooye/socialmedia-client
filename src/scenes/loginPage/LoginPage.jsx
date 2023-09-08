@@ -21,8 +21,13 @@ const LoginPage = () => {
           borderRadius="1.5rem"
           backgroundColor={alt}
         >
-          <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-            Join the leading developers.
+          <Typography
+            fontWeight="400"
+            variant="h5"
+            sx={{ mb: "1.5rem" }}
+            color="#004AAD"
+          >
+            Join the leading developers
           </Typography>
           <Form />
         </Box>

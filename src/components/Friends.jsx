@@ -48,7 +48,8 @@ const Friends = ({ friendId, userPicturePath, name, subtitle }) => {
         gap="0.5rem"
         onClick={() => navigate(`/profile/${friendId}`)}
       >
-        <UserImage image={userPicturePath} />
+        {userPicturePath === "" ? null : <UserImage image={userPicturePath} />}
+        {/* {userPicturePath && <UserImage image={userPicturePath} />} */}
         <Box>
           <Typography fontWeight="500" variant="h6">
             {name}

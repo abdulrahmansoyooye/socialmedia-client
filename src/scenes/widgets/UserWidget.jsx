@@ -55,7 +55,7 @@ const UserWidget = ({ userId, picturePath }) => {
       {/* First Row */}
       <FlexBetween gap="0.5rem" padding="1.1rem">
         <FlexBetween gap="1rem">
-          <UserImage image={picturePath} />
+          {picturePath === "" ? null : <UserImage image={picturePath} />}
           <Typography fontWeight="500">
             {firstName} {lastName}
           </Typography>
