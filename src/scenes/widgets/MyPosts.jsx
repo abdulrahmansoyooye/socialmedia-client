@@ -45,7 +45,7 @@ const MyPosts = ({ picturePath }) => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:3001/posts",
+        "https://socialmedia-numu.onrender.com/posts",
         formData,
         {
           headers: {
@@ -72,7 +72,7 @@ const MyPosts = ({ picturePath }) => {
         }}
         mb="2rem"
       >
-        <FlexBetween>
+        <FlexBetween gap="1rem">
           <UserImage image={picturePath}></UserImage>
 
           <InputBase

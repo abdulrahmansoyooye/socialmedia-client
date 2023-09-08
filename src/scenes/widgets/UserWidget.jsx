@@ -23,9 +23,12 @@ const UserWidget = ({ userId, picturePath }) => {
   const token = useSelector((state) => state.token);
   const navigate = useNavigate();
   const getUser = async () => {
-    const response = await axios.get(`http://localhost:3001/users/${userId}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await axios.get(
+      `https://socialmedia-numu.onrender.com/users/${userId}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     setUser(response.data);
   };
   useEffect(() => {

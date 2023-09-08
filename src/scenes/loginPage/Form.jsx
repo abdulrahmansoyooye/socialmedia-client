@@ -62,7 +62,7 @@ const Form = () => {
     setLoading(true);
     try {
       const loggedIn = await axios.post(
-        "http://localhost:3001/auth/login",
+        "https://socialmedia-numu.onrender.com/auth/login",
         values
       );
       onSubmitProps.resetForm();
@@ -90,7 +90,7 @@ const Form = () => {
       formData.append("picturePath", picture.name);
       formData.append("picture", picture);
       const savedUser = axios.post(
-        "http://localhost:3001/auth/register",
+        "https://socialmedia-numu.onrender.com/auth/register",
         formData
       );
       onSubmitProps.resetForm();

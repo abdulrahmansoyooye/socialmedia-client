@@ -10,10 +10,13 @@ const AllUsers = () => {
   const [users, setUsers] = useState([]);
   const { _id } = useSelector((state) => state.user);
   const getAllUsers = async () => {
-    const response = await fetch(`http://localhost:3001/users/`, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await fetch(
+      `https://socialmedia-numu.onrender.com/users/`,
+      {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     const data = await response.json();
     setUsers(data);
   };
