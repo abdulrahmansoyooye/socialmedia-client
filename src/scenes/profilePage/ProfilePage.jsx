@@ -35,15 +35,6 @@ const ProfilePage = () => {
         >
           <PostsWidget userId={userId} isProfile />
         </Box>
-
-        {/* <Box
-          mt={isNonMobileScreens ? undefined : "2rem "}
-          sx={{
-            flexBasis: isNonMobileScreens ? "26%" : undefined,
-          }}
-        >
-          <FriendWidget />
-        </Box> */}
       </Box>
     </Box>
   );

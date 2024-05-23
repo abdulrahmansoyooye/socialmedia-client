@@ -13,17 +13,18 @@ const FriendWidget = ({ userId }) => {
 
   return (
     <WidgetWrapper mt="1rem">
-      <Typography variant="h4" fontWeight="600" m="1rem 0">
+      <Typography variant="h4" fontWeight="500" m="1rem 0">
         Your Friends
       </Typography>
       <Divider />
-      {friends.length === 0 ? (
+      {friends.length <= 1 ? (
         <Typography variant="h5" m="1rem 0">
-          No friends Yet
+          Few or No Friends
         </Typography>
       ) : (
         friends.map((friend) => (
           <>
+            {console.log(friends)}
             <Friends
               key={friend._id}
               friendId={friend._id}
